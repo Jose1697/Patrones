@@ -1,0 +1,63 @@
+.body{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(12, 18, 36);
+    color: white;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+}
+.login__container{
+    width: 300px;
+    height: 400px;
+    border: 2px solid white;
+    border-radius: 40px;
+    justify-content: center;
+    padding: 40px 0px;
+    color: white;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Muli", sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label{
+    color: white;
+}
+  
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+    background-color: white !important;
+    color: white !important
+}
+  
+::ng-deep .mat-form-field-empty.mat-form-field-label {
+    color: white;
+}
