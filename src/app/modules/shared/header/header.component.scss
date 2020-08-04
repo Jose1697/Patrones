@@ -1,0 +1,25 @@
+.header{
+    background-color: black;
+}
+
+#logo-header{
+    display: flex;
+    align-items: center;
+    font-family: 'Fjalla One', sans-serif;
+  
+
+    img{
+        width: 50px;
+        margin-right: 10px;
+    }
+  
+    .frase-logo{
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+}
+
+
