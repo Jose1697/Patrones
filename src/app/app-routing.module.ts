@@ -9,6 +9,17 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
 
+      {
+        path:'',
+        redirectTo:'home',
+        pathMatch:'full',
+      },
+
+      {
+        path:'home',
+        loadChildren:()=> import('./modules/inicio/inicio.module').then(m => m.InicioModule)
+      }
+
     ]
   },
   
