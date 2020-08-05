@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    margin:0px;
+    padding: 0px;
+}
+
+.destino-grid{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    margin: auto;
+    justify-content:center;
+}
+
+
+
+@media (min-width: 600px){
+    .destino-grid{
+        grid-template-columns: repeat(4,1fr);
+        margin: auto;
+        width: 93%;
+    }
+
+    .container{
+        width: 1200px;
+    }
+}

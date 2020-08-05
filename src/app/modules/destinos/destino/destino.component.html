@@ -1,0 +1,14 @@
+<div class="card destino">
+    <img [src]="destino.imagen" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><strong>{{ destino.nombre | uppercase }}</strong></h5>
+      <h5>{{ destino.precio | currency }}</h5>
+      <p class="card-text">{{destino.descripcion}}</p>
+      
+      <a href="#" class="btn btn-primary">Comprar</a>
+      <a href="#" class="btn btn-primary">Ver Detalle</a>
+      
+    </div>
+</div>
+
+

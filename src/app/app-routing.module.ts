@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { LayoutComponent } from './modules/layout/layout.component';
 
 
@@ -18,6 +18,11 @@ const routes: Routes = [
       {
         path:'home',
         loadChildren:()=> import('./modules/inicio/inicio.module').then(m => m.InicioModule)
+      },
+
+      {
+        path:'destinos',
+        loadChildren:() => import('./modules/destinos/destinos.module').then(m => m.DestinosModule)
       }
 
     ]
