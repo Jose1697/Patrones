@@ -6,7 +6,7 @@ import {Destino} from '../../interface/destino'
 })
 export class DestinosService {
 
-  url_api = 'localhost:8000/destino'
+  url_api = 'http://localhost:8000/destino'
 
   constructor(private http: HttpClient) { }
 
