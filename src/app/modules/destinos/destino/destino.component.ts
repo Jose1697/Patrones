@@ -9,16 +9,12 @@ import { Destino } from '../../core/interface/destino'
 export class DestinoComponent implements OnInit {
 
   @Input() destino: Destino;
-  @Output() productClicked: EventEmitter<any> = new EventEmitter();
+  
   
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addCar(){
-    console.log('añadir al carrito');
-    this.productClicked.emit(this.destino.id)
-  }
 
 }

@@ -1,5 +1,5 @@
 export interface Destino{
-    id: number;
+    iddestino: number;
     nombre: string;
     descripcion: string;
     imagen: string;

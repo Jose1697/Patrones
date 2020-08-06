@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Destino} from '../../core/interface/destino'
+import {Destino} from '../../core/interface/destino';
+import { DestinosService } from '../../core/service/destinos/destinos.service';
  
 @Component({
   selector: 'app-destinos',
@@ -8,36 +9,22 @@ import {Destino} from '../../core/interface/destino'
 })
 export class DestinosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private destinoService: DestinosService) { }
 
   ngOnInit(): void {
+    this.fetchDestinos();
   }
 
-  destinos: Destino[] = [
-    
-    {
-      id: 1,
-      nombre: 'Trujillo',
-      descripcion: 'Tierra de sicarios',
-      imagen: 'https://turismo.org.pe/wp-content/uploads/2018/12/trujillo.jpg',
-      precio: 123,
-    },
-    
-    {
-      id: 2,
-      nombre: 'Cuzco',
-      descripcion: 'El ombligo del mundo xd',
-      imagen:'https://cdn.getyourguide.com/img/tour/5d186c3f36cbf.jpeg/146.jpg',
-      precio: 299.99,
-      
-    },
+  destinos: Destino[] = [];
 
-  ];
+  fetchDestinos(){
+    this.destinoService.getAllDestinos()
+      .subscribe(destinos => {
+        this.destinos = destinos
+      })
 
-  clickProduct(id: number){
-    console.log('product');
-    console.log(id);
-    
   }
+
+  
 
 }

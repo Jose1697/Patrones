@@ -2,7 +2,6 @@
     <div class="destino-grid">
         <app-destino
             *ngFor="let destino of destinos" 
-            (productClicked)="clickProduct($event)" 
             [destino]="destino">
         </app-destino>
     </div>
