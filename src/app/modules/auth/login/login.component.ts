@@ -31,15 +31,16 @@ export class LoginComponent implements OnInit {
   usuario: Usuario;
 
   login(event: Event){
-    event.preventDefault();
+    // event.preventDefault();
     const user = this.form.value
     this.usuariosService.loginUsuario(user)
       .subscribe(response => {
         console.log(response);
         this.usuariosService.getAllUsuarios().subscribe(usuarios=>{
           this.usuario = usuarios.filter(el => { return (el.username === user.username)})[0]
+          this.userService.user = this.usuario
         })
-        
+         
         this.router.navigate(['./'])
 
       });
@@ -53,11 +54,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  setUser(){
-    console.log('usuario log');
-    this.userService.setUser(this.usuario)
-    // console.log(this.usuario.username);
-    
-  }
+  
 
 }
