@@ -8,19 +8,19 @@
                 <div class="rowl">
                     <div class="col-xs">
                     <mat-form-field>
-                        <input placeholder="Email" formControlName="email" matInput type="email">
+                        <input placeholder="Nombre de Usuario" formControlName="username" matInput type="email">
                     </mat-form-field>
                     </div>
                 </div>
                 <div class="rowl">
                     <div class="col-xs">
                     <mat-form-field>
-                        <input placeholder="Password" formControlName="password" matInput type="password">
+                        <input placeholder="Contraseña" formControlName="password" matInput type="password">
                     </mat-form-field>
                     </div>
                 </div>
             
-                <button [disabled]="form.invalid" class="button" type="submit">Iniciar Sesion</button>
+                <button (click)="setUser()" [disabled]="form.invalid" class="button" type="submit">Iniciar Sesion</button>
             
             </form>
 
