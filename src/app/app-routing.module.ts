@@ -23,7 +23,7 @@ const routes: Routes = [
       {
         path:'destinos',
         loadChildren:() => import('./modules/destinos/destinos.module').then(m => m.DestinosModule)
-      }
+      },
 
     ]
   },

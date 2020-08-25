@@ -1,0 +1,9 @@
+<div class="cont">
+    <h1>{{destino.nombre}}</h1>
+    <div class="destino-grid">
+        <app-lugar
+            *ngFor="let lugar of lugares" 
+            [lugar]="lugar">
+        </app-lugar>
+    </div>
+</div>

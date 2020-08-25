@@ -21,6 +21,8 @@ export class DestinosComponent implements OnInit {
     this.destinoService.getAllDestinos()
       .subscribe(destinos => {
         this.destinos = destinos
+        console.log('hola');
+        
       })
 
   }

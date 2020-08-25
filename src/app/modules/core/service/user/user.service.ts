@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UserService {
 
-  user: Usuario = null;
+  user: Usuario;
   private cont = new BehaviorSubject<Usuario>(null)
 
   // cont$ = this.cont.asObservable()
