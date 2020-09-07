@@ -25,16 +25,29 @@
             </li>
 
           </ul>
-          <div class="header__menu">
-            <div class="header__menu--profile">
+          <div *ngIf="userService.user.username != null; else elseblock"class="header__menu">
+            <div   class="header__menu--profile">
                 <p>{{ userService.user.username}}</p>
                 <img  src="../../../../assets/images/user-icon.png" alt="User">
             </div>
             <ul class="opciones">
                 <li><a href="">Cuenta</a></li>
-                <li><a href="">Cerrar Sesión</a></li>
+                <li><a (click)="userService.borrar_localStorage()" href="/auth/login">Cerrar Sesión</a></li>
             </ul>
-        </div>
+          </div>
+
+          <ng-template #elseblock>
+            <a href="/auth/login">Iniciar Sesion</a>
+          </ng-template>
+          
+
+          
+          
+            
+          
+            
+          
+          
 
         </div>
 

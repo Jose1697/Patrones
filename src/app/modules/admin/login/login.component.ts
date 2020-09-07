@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../../core/service/user/user.service';
 import { UsuariosService } from '../../core/service/usuarios/usuarios.service';
 import { Router } from '@angular/router';
 import { Usuario } from '../../core/interface/usuario';
-
-import { UserService } from '../../core/service/user/user.service';
-
 
 @Component({
   selector: 'app-login',
@@ -13,7 +11,6 @@ import { UserService } from '../../core/service/user/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   form: FormGroup;
 
   constructor(
@@ -23,7 +20,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
   ) {
     this.buildForm()
-  }
+   }
 
   ngOnInit(): void {
   }
@@ -39,16 +36,14 @@ export class LoginComponent implements OnInit {
         this.usuariosService.getAllUsuarios().subscribe(usuarios=>{
           this.usuario = usuarios.filter(el => { return (el.username === user.username)})[0]
           this.userService.user = this.usuario
-          this.userService.grabar_localStorage(this.usuario)
-
-          this.router.navigate(['./'])
         })
          
-        
+        this.router.navigate(['./'])
 
       });
     
   }
+
 
   private buildForm(){
     this.form = this.formBuilder.group({
@@ -56,7 +51,5 @@ export class LoginComponent implements OnInit {
       password: ['',[Validators.required]]
     });
   }
-
-  
 
 }

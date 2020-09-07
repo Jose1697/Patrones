@@ -1,9 +1,13 @@
-<div class="cont">
-    <h1>{{destino.nombre}}</h1>
-    <div class="destino-grid">
-        <app-lugar
-            *ngFor="let lugar of lugares" 
-            [lugar]="lugar">
-        </app-lugar>
+<div class="container mt-5">
+    <div class="cont">
+        <h1><strong>{{destino.nombre |uppercase}}</strong></h1>
+        <h1>Usted podrá visitar los siguientes lugares turisticos en {{destino.nombre}}</h1>
+        <div class="destino-grid">
+            <app-lugar
+                *ngFor="let lugar of lugares" 
+                [lugar]="lugar">
+            </app-lugar>
+        </div>
     </div>
 </div>
+

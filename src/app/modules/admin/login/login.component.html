@@ -1,0 +1,32 @@
+<div class="body">
+    <section class="login">
+        <div class="login__container">
+            <h2>Inicia Sesión</h2>
+    
+            <form [formGroup]="form" (ngSubmit)="login($event)">
+    
+                <div class="rowl">
+                    <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Nombre de Usuario" formControlName="username" matInput type="email">
+                    </mat-form-field>
+                    </div>
+                </div>
+                <div class="rowl">
+                    <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Contraseña" formControlName="password" matInput type="password">
+                    </mat-form-field>
+                    </div>
+                </div>
+            
+                <button  [disabled]="form.invalid" class="button" type="submit">Iniciar Sesion</button>
+            
+            </form>
+
+            <p>No tienes ninguna cuenta <a routerLink="/auth/register">Regístrate</a></p>
+    
+        </div>
+    
+    </section>
+</div>
