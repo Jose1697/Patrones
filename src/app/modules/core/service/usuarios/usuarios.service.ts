@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosService {
 
-  url_api = 'http://localhost:8000/users'
+  url_api = 'https://travelsublimes.herokuapp.com/users'
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +26,7 @@ export class UsuariosService {
   }
 
   loginUsuario(usuario): Observable<any>{
-    return this.http.post('http://localhost:8000/auth/', usuario);
+    return this.http.post('https://travelsublimes.herokuapp.com/auth/', usuario);
   }
 
   updateUsuario(id:string, changes: Partial<Usuario>){

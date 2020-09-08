@@ -8,7 +8,7 @@ import { Viaje } from '../../interface/viaje'
 })
 export class ViajesService {
 
-  url_api = 'http://localhost:8000/viaje'
+  url_api = 'https://travelsublimes.herokuapp.com/viaje'
 
   constructor(private http: HttpClient) { }
 

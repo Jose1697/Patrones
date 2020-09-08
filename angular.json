@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "sublime-travels",
   "projects": {
-    "project": {
+    "sublime-travels": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/project",
+            "outputPath": "dist/sublime-travels",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "project:build"
+            "browserTarget": "sublime-travels:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "project:build:production"
+              "browserTarget": "sublime-travels:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project:build"
+            "browserTarget": "sublime-travels:build"
           }
         },
         "test": {
@@ -121,19 +121,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "project:serve"
+            "devServerTarget": "sublime-travels:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "project:serve:production"
+              "devServerTarget": "sublime-travels:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "project",
+  "defaultProject": "sublime-travels",
   "cli": {
-    "analytics": "f88d9a57-816d-4447-9116-bcc73a19db58"
+    "analytics": false
   }
 }

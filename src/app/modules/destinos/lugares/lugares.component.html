@@ -2,7 +2,8 @@
     <div class="cont">
         <h1><strong>{{destino.nombre |uppercase}}</strong></h1>
         <h1>Usted podrá visitar los siguientes lugares turisticos en {{destino.nombre}}</h1>
-        <div class="destino-grid">
+        <br>
+        <div class="">
             <app-lugar
                 *ngFor="let lugar of lugares" 
                 [lugar]="lugar">

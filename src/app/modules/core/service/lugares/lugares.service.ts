@@ -7,7 +7,7 @@ import {Lugar} from '../../interface/lugar'
 })
 export class LugaresService {
 
-  url_api = 'http://localhost:8000/lugar'
+  url_api = 'https://travelsublimes.herokuapp.com/lugar'
 
   constructor(private http: HttpClient) { }
 

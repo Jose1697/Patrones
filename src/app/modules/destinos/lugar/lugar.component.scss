@@ -1,13 +1,22 @@
-.lugar{
-    margin: 10px;
+.lugar-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-a{
-    margin: 5px;
-}
-
-img{
+.card{
+    border-radius: 30px;
     height: 300px;
-    width: 100%;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.descripcion{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+
 }
