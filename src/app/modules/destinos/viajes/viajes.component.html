@@ -1,8 +1,11 @@
-<div class="cont">
-    <div class="destino-grid">
-        <app-viaje
-            *ngFor="let viaje of viajes" 
-            [viaje]="viaje">
-        </app-viaje>
+<div class="viajes">
+    <div class="cont">
+        <div class="destino-grid">
+            <app-viaje
+                *ngFor="let viaje of viajes" 
+                [viaje]="viaje">
+            </app-viaje>
+        </div>
     </div>
 </div>
+

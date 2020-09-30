@@ -5,13 +5,14 @@
       
       <p class="card-text">Fecha de salida: {{viaje.fecha}}</p>
       <p class="card-text">Hora de salida: {{viaje.hora}}</p>
+      <p class="card-text">Disponibilidad: {{viaje.capacidad}}</p>
       
-      <a class="btn btn-primary"  data-toggle="modal" data-target="#modalCompra">Comprar</a>
+      <a class="btn btn-primary" [routerLink]="['comprar',viaje.idviaje]" >Comprar</a>
       
     </div>
 </div>
 
-<div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="comprar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -26,33 +27,18 @@
         <p class="card-text">Precio: <strong>{{ destino.precio }}</strong> </p>
         <p class="card-text">Fecha de viaje: <strong>{{viaje.fecha}}</strong></p>
         <p class="card-text">Hora de viaje: <strong>{{viaje.hora}}</strong></p>
-        <form>
+        
+        
+        <input type="number" placeholder="Cantidad" name="cantidad">
+        
+        
 
-          <div class="form-row">
-
-            <div class="form-group col">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-            </div>
-
-          </div>
-        </form>
-
-        <div class="alert alert-warning" role="alert">
-          Recibirás un correo de confirmación 
-        </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-platzi">Comprar</button>
+        <button type="button" class="btn btn-platzi" (click)="comprar($event)">Comprar</button>
       </div>
     </div>
   </div>
-</div>
-
-
+</div> -->

@@ -22,7 +22,7 @@ export class UsuariosService {
   }
 
   createUsuario(usuario: Usuario){
-    return this.http.post(this.url_api, usuario)
+    return this.http.post<Usuario>(this.url_api, usuario)
   }
 
   loginUsuario(usuario): Observable<any>{

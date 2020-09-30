@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {MatInputModule} from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';//
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatCardModule } from '@angular/material/card'; //
+import {MatFormFieldModule} from '@angular/material/form-field';//
+
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatInputModule } from '@angular/material/input'; //
+import { MatSelectModule } from '@angular/material/select'; //---
+import { MatRadioModule } from '@angular/material/radio';
+import {MatTableModule} from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 
@@ -13,16 +25,36 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   declarations: [],
   imports: [
     CommonModule,
-    MatInputModule,
-    MatCardModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatListModule,
+    LayoutModule,
     MatFormFieldModule,
+    MatStepperModule
   ],
   exports: [
-    MatInputModule,
-    MatCardModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatListModule,
+    LayoutModule,
     MatFormFieldModule,
+    MatStepperModule
   ],
 
 })

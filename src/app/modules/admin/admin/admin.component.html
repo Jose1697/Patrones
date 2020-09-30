@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Administracion</mat-toolbar>
+      <div class="admin">
+        
+        <br><br>
+        <p>Bienvenido,<br>{{ userService.admin.username}}</p>
+        <img class="imagen" src="../../../../assets/images/user-icon.png" alt="">
+      </div>
+      
+      <mat-nav-list class="opciones">
+        <a mat-list-item routerLink="/admin/destinos">Destinos</a>
+        <a mat-list-item routerLink="/admin/viajes">Viajes</a>
+        <a mat-list-item routerLink="/clientes">Clientes</a>
+        <a class="cerrarsesion" mat-list-item (click)="userService.borrar_localStorageAdmin()" href="/auth/login">Cerrar Sesion</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div>
+          <img class="imagen mr-2" src="../../../../assets/images/logoAvion.png" alt="">
+          <span>Sublime Travels</span>
+        </div>
+        
+        
+        <div class="header__menu">
+          <div   class="header__menu--profile">
+              <p>{{ userService.admin.username}}</p>
+              <a href="">
+                <img  src="../../../../assets/images/user-icon.png" alt="User">
+              </a>   
+          </div>
+        </div>
+        
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

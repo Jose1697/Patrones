@@ -5,6 +5,8 @@ import { UsuariosService } from '../../core/service/usuarios/usuarios.service';
 import { Router } from '@angular/router';
 import { Usuario } from '../../core/interface/usuario';
 
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -35,10 +37,21 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.usuariosService.getAllUsuarios().subscribe(usuarios=>{
           this.usuario = usuarios.filter(el => { return (el.username === user.username)})[0]
-          this.userService.user = this.usuario
+          console.log(this.usuario)
+          if(this.usuario.is_staff){
+            this.userService.admin = this.usuario
+            this.userService.grabar_localStorage(this.usuario)
+
+            this.router.navigate(['admin/'])
+          }
+          else{
+            alert('La cuenta no es válida')
+            this.router.navigate(['admin/destinos'])
+          }
+          
         })
          
-        this.router.navigate(['./'])
+        
 
       });
     

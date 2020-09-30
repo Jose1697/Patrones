@@ -1,0 +1,36 @@
+<a mat-raised-button  routerLink="create">Añadir nuevos destinos</a>
+<table mat-table [dataSource]="destinos" class="mat-elevation-z8  destino-table">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let destino"> {{destino.iddestino}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let destino"> {{destino.nombre}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let destino"> {{destino.precio}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Gestionar </th>
+      <td mat-cell *matCellDef="let destino">
+          <button mat-raised-button color="primary" class="button-list-edit" [routerLink]="['edit',destino.iddestino]">Editar</button>
+          <button mat-raised-button color="warn" class="button-list-delete" (click)="deleteDestino(destino.iddestino)">Eliminar</button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

@@ -10,6 +10,13 @@ import { LugaresComponent } from './lugares/lugares.component';
 import { LugarComponent } from './lugar/lugar.component';
 import { ViajeComponent } from './viaje/viaje.component';
 import { ViajesComponent } from './viajes/viajes.component';
+import { MaterialModule } from '../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ComprarComponent } from './comprar/comprar.component';
+
+
+
 
 
 @NgModule({
@@ -20,12 +27,17 @@ import { ViajesComponent } from './viajes/viajes.component';
     LugaresComponent,
     LugarComponent,
     ViajeComponent,
-    ViajesComponent
+    ViajesComponent,
+    ComprarComponent,
   ],
+
   imports: [
     CommonModule,
     DestinosRoutingModule,
-    SharedModule,
+    RouterModule,
+    SharedModule, 
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class DestinosModule { }

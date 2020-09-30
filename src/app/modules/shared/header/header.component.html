@@ -3,7 +3,7 @@
       <div class="container">
         <a id="logo-header" class="navbar-brand" href="#">
           <img src="../../../../assets/images/logoAvion.png" alt="">
-          <label class="frase-logo">NOMBRE</label>
+          <label class="frase-logo">SUBLIME TRAVELS</label>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,27 +28,69 @@
           <div *ngIf="userService.user.username != null; else elseblock"class="header__menu">
             <div   class="header__menu--profile">
                 <p>{{ userService.user.username}}</p>
-                <img  src="../../../../assets/images/user-icon.png" alt="User">
+
+                <img *ngIf="userService.cliente.imagen === ''; else otraopcion " src="../../../../assets/images/user-icon.png" alt="User">
+                <ng-template #otraopcion>
+                  <img class="fotoperfil" src="{{this.userService.cliente.imagen}}" alt="User">
+                </ng-template>
             </div>
             <ul class="opciones">
-                <li><a href="">Cuenta</a></li>
-                <li><a (click)="userService.borrar_localStorage()" href="/auth/login">Cerrar Sesión</a></li>
+                <li><a data-toggle="modal" data-target="#modalCompra">Cuenta</a></li>
+                <li><a (click)="userService.borrar_localStorage()" href="/user/login">Cerrar Sesión</a></li>
             </ul>
           </div>
 
           <ng-template #elseblock>
-            <a href="/auth/login">Iniciar Sesion</a>
+            <a href="/user/login">Iniciar Sesion</a>
           </ng-template>
           
-
-          
-          
-            
-          
-            
-          
-          
-
         </div>
 
       </div>
+    </nav>
+</section>
+
+
+<div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">EDITAR PERFIL</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>DATOS DE USUARIO</strong></p>
+        <p class="card-text">Nombres: <strong>{{this.userService.user.first_name}}</strong></p>
+        <p class="card-text">Apellidos: <strong>{{this.userService.user.last_name}}</strong> </p>
+        <p class="card-text">Nombre de Usuario: <strong>{{this.userService.user.username}}</strong></p>
+        <br>
+        <p class="card-text">¿Desea cambiar la foto de perfil?</p>
+        
+        <div class="edit">
+          <form action="" class="edit-form"   [formGroup]="form" (ngSubmit)="saveUsername($event)">
+              <mat-card>
+                  <mat-card-content>
+                      <div class="row">
+                        <div class="col-xs">
+                            <img *ngIf="(image$ | async) as imagen"  [src]="imagen" alt="">
+                            <input type="file" (change)="uploadFile($event)">
+                        </div>
+                    </div>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button [disabled]="form.invalid" mat-raised-button type="submit">Cambiar</button>
+                   </mat-card-actions>
+                  
+              </mat-card>
+          </form> 
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <a type="button" class="btn btn-secondary"  href="javascript:location.reload()">Aceptar</a>
+      </div>
+    </div>
+  </div>
+</div>

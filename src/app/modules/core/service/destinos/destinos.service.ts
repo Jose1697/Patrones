@@ -6,6 +6,8 @@ import {Destino} from '../../interface/destino'
 })
 export class DestinosService {
 
+  destinos: Destino[] = [] 
+
   url_api = 'https://travelsublimes.herokuapp.com/destino'
 
   constructor(private http: HttpClient) { }

@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuariosService } from '../../core/service/usuarios/usuarios.service';
 import { Router } from '@angular/router';
+import { ClienteService } from '../../core/service/cliente/cliente.service';
+import { Cliente } from '../../core/interface/cliente';
+import { Usuario } from '../../core/interface/usuario';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -11,16 +15,22 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
+  public cliente: Cliente;
+  public usuario: Usuario;
 
   constructor(
     private formBuilder: FormBuilder,
     private usuariosService: UsuariosService,
     private router: Router,
+    private clienteService:ClienteService,
+    
   ) { 
     this.buildForm();
   }
 
-  ngOnInit(): void {
+  ngOnInit(
+    
+  ): void {
   }
 
   register(event: Event){
@@ -28,11 +38,20 @@ export class RegisterComponent implements OnInit {
     if(this.form.valid){
       const user = this.form.value
       this.usuariosService.createUsuario(user)
-        .subscribe((newuser) => {
-          console.log(newuser);
+        .subscribe(newuser => {
+          this.usuario = newuser
+          this.cliente = {
+            idcliente:"",
+            usuario:this.usuario.id,
+            imagen:"",
+          }
+          this.clienteService.createCliente(this.cliente)
+           .subscribe((cliente)=>{
+              console.log(cliente);   
+           })
           alert('Usuario Creado')
-          this.router.navigate(['./auth/login'])
-        })
+          this.router.navigate(['./user/login'])
+        }) 
     }
   }
 

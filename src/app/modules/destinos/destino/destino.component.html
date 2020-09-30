@@ -5,7 +5,7 @@
       <h5>{{ destino.precio | currency }}</h5>
       <p class="card-text">{{destino.descripcion}}</p>
       
-      <a class="btn btn-primary" [routerLink]="['comprar',destino.iddestino]" >Comprar</a>
+      <a class="btn btn-primary" [routerLink]="['boletos',destino.iddestino]" >Comprar</a>
       <a class="btn btn-primary" [routerLink]="[destino.iddestino]">Ver Detalle</a>
       
     </div>

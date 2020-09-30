@@ -1,12 +1,35 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { DestinosComponent } from '../admin/destinos/destinos.component';
+import { ViajesComponent } from '../admin/viajes/viajes.component';
+import { AdminComponent } from './admin/admin.component';
+import { DestinoCreateComponent } from './destino-create/destino-create.component';
+import { DestinoEditComponent } from './destino-edit/destino-edit.component';
 
 
 const routes: Routes = [
   {
-    path:'login',
-    component: LoginComponent
+    path:'',
+    component:AdminComponent,
+    children:[
+      {
+        path:'destinos',
+        component:DestinosComponent
+      },
+      {
+        path:'destinos/edit/:id',
+        component: DestinoEditComponent
+      },
+      {
+        path:'destinos/create',
+        component: DestinoCreateComponent
+      },
+      {
+        path:'viajes',
+        component:ViajesComponent
+      }
+      
+    ]
   }
 ];
 

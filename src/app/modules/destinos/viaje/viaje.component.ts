@@ -11,9 +11,15 @@ export class ViajeComponent implements OnInit {
 
  @Input() viaje: Viaje
 
+
   destino: Destino
 
-  constructor(private destinoService: DestinosService) { }
+  constructor(
+    private destinoService: DestinosService,
+    
+    ) { 
+    
+  }
 
 
   ngOnInit(): void {
@@ -22,6 +28,10 @@ export class ViajeComponent implements OnInit {
         this.destino = destino
       })
   }
+
+  
+  
+
 
 
 

@@ -9,6 +9,9 @@ import { LayoutComponent } from './modules/layout/layout.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireModule } from '@angular/fire'
+import {AngularFireStorageModule} from '@angular/fire/storage'
+import { environment } from 'src/environments/environment';
 
 
 
@@ -23,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
